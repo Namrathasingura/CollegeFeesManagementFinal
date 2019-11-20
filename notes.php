@@ -47,7 +47,22 @@ function filtertable($query)
 
     <script src="database/jquery-3.1.1.js"></script>
     <script src="database/script.js"></script>
-
+    <style>
+        .pull-right{
+            width: 75px;
+            height: 30px;
+            background-color: lightblue;
+            border: 1px solid deepskyblue;
+        }
+        button{
+            width: 30px;
+            border: none;
+            background-color: transparent;
+        }
+        #fa-book{
+            color: blue;
+        }
+    </style>
 </head>
 <?php
 include("php/header.php");
@@ -61,7 +76,7 @@ include("php/header.php");
                 <div class="row" >
                     <div class="col-md-12">
                         <h2 class="page-header" ><strong>Notes</strong>
-                            <a href="fees.php" class="btn btn-primary btn-sm pull-right" style="background-color: darkblue"><i class="glyphicon glyphicon-plus"></i> Add </a></h2>
+                            <a href="sample.php" class="btn btn-primary btn-sm pull-right" style="background-color: darkblue"><i class="glyphicon glyphicon-plus"></i> Add </a></h2>
 
                         </h2>
 
@@ -90,8 +105,8 @@ include("php/header.php");
                                                     <td><?php echo $row['branch'];?></td>
                                                     <td><?php echo $row['sem'];?></td>
                                                     <td><?php echo $row['notes'];?></td>
-                                                    <td><input type="submit" style="width: 10px;" class="note" name="note" id="note" value="<?php echo $row['id'];?>"/></td>
-
+<!--                                                    <td><input type="submit" class="note fa  fa-book" name="note" id="note" value="--><?php //echo $row['id'];?><!--"/><- CLICK HERE </td>-->
+                                                    <td><button class="note" name="note" id="note" value="<?php echo $row['id'];?> "><i id="fa-book" class="fa fa-book"></i> </button></td>
                                                 </tr>
                                             <?php endwhile;
                                             ?>

@@ -18,7 +18,19 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <script src="database/jquery-3.1.1.js"></script>
     <script src="database/script.js"></script>
-
+    <style>
+        button{
+            width: 10px;
+            border: none;
+            background-color: transparent;
+        }
+        .fa-edit{
+            color: blue;
+        }
+        .fa-trash{
+            color: red;
+        }
+    </style>
 
 </head>
 <body>
@@ -66,9 +78,9 @@ include("php/header.php");
                                     <td ><input type="text" id="hod" value="<?php echo $row['hod']; ?>"/></td>
 
                                     <td>
-                                        <button style="width: 10px;" class="editbranch" name="update" vals="<?php echo $row['id'];?>"></button>
+                                        <button class="editbranch" name="update" vals="<?php echo $row['id'];?>"><i  class="fa fa-edit"></i> </button>&nbsp;&nbsp;
 
-                                        <button style="width: 10px;" class="editbranch" name="delete" vals="<?php echo $row['id'];?>"></button>
+                                        <button class="editbranch" name="delete" vals="<?php echo $row['id'];?>"><i  class="fa fa-trash"></i></button>
                                     </td>
                                 </tr>
 

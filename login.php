@@ -122,11 +122,11 @@
 
             <div class="panel-body" style="background-color: white; margin-top:150px; margin-left: -40px; border:solid 2px mediumspringgreen;  width:500px; ">
                 <h3 class="myhead" style="color:black ">LOGIN IN</h3>
-                <form role="form" action="login.php" method="post">
+                <form role="form" action="" method="post">
                     <hr />
                     <div class="form-group input-group">
                         <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
-                        <input type="email" class="form-control" placeholder="Your Username " name="username" required />
+                        <input type="text" class="form-control" placeholder="Your Username " name="username" required />
                     </div>
 
                     <div class="form-group input-group">
@@ -134,19 +134,34 @@
                         <input type="password" class="form-control"  placeholder="Your Password" name="password" required />
                     </div>
 
-                    <div class="form-group">
+<!--                    <div class="form-group">-->
+<!---->
+<!--                     <span class="pull-right">-->
+<!--                      <a href="index.html"  style="color: #5a95ba" >Forget password ? </a>-->
+<!--                     </span>-->
+<!--                    </div>-->
 
-                     <span class="pull-right">
-                      <a href="index.html"  style="color: #5a95ba" >Forget password ? </a>
-                     </span>
-                    </div>
-
-                    <button class="btn btn-success" type= "submit" name="login" ><a href="index.php"> <label style="color: white">Login Now</label></a></button>
+                    <button class="btn btn-success" type= "submit" name="login" > <label style="color: white">Login Now</label></button>
 
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<?php
+if(isset($_POST['login']))
+{
+    $username=$_POST['username'];
+    $pass=$_POST['password'];
+    include 'sql.php';
+    $str="select * from tbladmin where name='$username' and password='$pass'";
+    $res=mysqli_query($sql,$str);
+    if(mysqli_num_rows($res)>0)
+        echo "<script>alert('Login Successfull');window.location.href='mainpage.php';</script>";
+    else
+        echo "<script>alert('Login unuccessfull');</script>";
+}
+?>
 </body>
 </html>

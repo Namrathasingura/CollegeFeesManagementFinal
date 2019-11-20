@@ -34,6 +34,11 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <style>
+      #mu-contact{
+        background-color: red;
+      }
+    </style>
     <![endif]-->
 
   </head>
@@ -53,10 +58,10 @@
           <div class="mu-header-area">
             <div class="row">
               <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                <div class="mu-header-top-left">
+                <div class="mu-header-top-left" style="margin-left: -50px;">
                   <div class="mu-top-email">
                     <i class="fa fa-envelope"></i>
-                    <span>eduuniversity@gmail.com</span>
+                    <span>sdit@gmail.com</span>
                   </div>
                   <div class="mu-top-phone">
                     <i class="fa fa-phone"></i>
@@ -96,8 +101,8 @@
           </button>
           <!-- LOGO -->
           <!-- TEXT BASED LOGO -->
-          <img src="../img/univer.jpg" style="width: 60px; height: 60px;/">
-          <a class="navbar-brand" href="index.html"><span style="font-style: oblique">EDU University</span></a>
+          <img src="../img/shreeDevi_logo.jpg" style="width: 250px; height: 70px; margin-left: -50px;/">
+          <!--<a class="navbar-brand" href="index.html"><span style="font-style: oblique">EDU University</span></a>-->
           <!-- IMG BASED LOGO  -->
           <!--
           <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" alt="logo"></a> -->
@@ -139,7 +144,7 @@
      <div class="row">
        <div class="col-md-12">
          <div class="mu-page-breadcrumb-area">
-           <h2>Contact</h2>
+           <h2 style="font-family:Forte">Contact</h2>
            <ol class="breadcrumb">
             <li><a href="#">Home</a></li>            
             <li class="active">Contact</li>
@@ -159,8 +164,8 @@
          <div class="mu-contact-area">
           <!-- start title -->
           <div class="mu-title">
-            <h2>Get in Touch</h2>
-            <p>Any Queries Just Drop Here to Contact Us</p>
+            <h2 style="font-family:Forte">Get in Touch</h2>
+            <p >Any Queries Just Drop Here to Contact Us</p>
           </div>
           <!-- end title -->
           <!-- start contact content -->
@@ -168,10 +173,10 @@
             <div class="row">
               <div class="col-md-6">
                 <div class="mu-contact-left">
-                  <form class="contactform">                  
+                  <form class="contactform" action="../database/insertcontact.php" method="post">
                     <p class="comment-form-author">
                       <label for="author">Name <span class="required">*</span></label>
-                      <input type="text" required="required" size="30" value="" name="author">
+                      <input type="text" required="required" size="30" value="" name="name">
                     </p>
                     <p class="comment-form-email">
                       <label for="email">Email <span class="required">*</span></label>
@@ -182,8 +187,8 @@
                       <input type="text" name="subject">  
                     </p>
                     <p class="comment-form-comment">
-                      <label for="comment">Message</label>
-                      <textarea required="required" aria-required="true" rows="8" cols="45" name="comment"></textarea>
+                      <label for="comment">Message<span class="required">*</span></label>
+                      <textarea required="required" aria-required="true" rows="8" cols="45" name="msg"></textarea>
                     </p>                
                     <p class="form-submit">
                       <input type="submit" value="Send Message" class="mu-post-btn" name="submit">
@@ -193,7 +198,7 @@
               </div>
               <div class="col-md-6">
                 <div class="mu-contact-right">
-                  <img src="../img/contact2.jpg" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></img>
+                  <img src="../img/contact2.jpg" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></img>
                 </div>
               </div>
             </div>

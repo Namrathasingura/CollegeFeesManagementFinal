@@ -14,17 +14,17 @@ $dob=$_POST['dob'];
 //$bcode='cs';
 //$hod='anandddd';
 
-// $status=false;
+ $status=false;
 
 $sql="update tblstudent set fname='$fname',mname='$mname',lname='$lname', username='$uname',email='$email',dob='$dob' where id='$id'";
 
 if($conn->query($sql))
 {
-    echo "success";
+    //echo "<script>alert('Updated');</script>";
     $status=true;
 }
 else{
-    echo "error";
+   // echo "error";
     $status=false;
 }
 

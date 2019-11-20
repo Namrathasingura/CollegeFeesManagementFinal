@@ -34,12 +34,12 @@ include("php/header.php");
                         <div class="panel-heading" style="background: linear-gradient(to right,darkblue,black)">
                             Change Password
                         </div>
-                        <form action="setting.php" method="post" id="signupForm1" class="form-horizontal">
+                        <form action="database/adminpass.php" method="post" id="signupForm1" class="form-horizontal">
                             <div class="panel-body">
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label" for="Old">Old Password</label>
                                     <div class="col-sm-5">
-                                        <input type="password" class="form-control" id="oldpassword" name="oldpassword"  />
+                                        <input type="password" class="form-control" id="oldpassword" name="opass"  />
                                     </div>
                                 </div>
 
@@ -47,7 +47,7 @@ include("php/header.php");
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label" for="Password"> New Password</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" name="newpassword" id="newpassword" type="password">
+                                        <input class="form-control" name="npass" id="newpassword" type="password">
                                     </div>
                                 </div>
 
@@ -55,7 +55,7 @@ include("php/header.php");
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label" for="Confirm">Confirm Password</label>
                                     <div class="col-sm-5">
-                                        <input class="form-control" name="confirmpassword" type="password">
+                                        <input class="form-control" name="cpass" type="password">
                                     </div>
                                 </div>
 

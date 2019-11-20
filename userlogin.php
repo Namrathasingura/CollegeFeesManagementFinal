@@ -138,19 +138,16 @@
                     <div class="form-group">
 
                         <span class="pull-right">
-                             <a href="index.html"  style="color: #5a95ba" >Forget password ? </a>
+                             <a href="Varsity/Forgot.html"  style="color: #5a95ba" >Forget password ? </a>
                          </span>
                     </div>
 
                     <button class="btn btn-success" type= "submit" name="login" > <label style="color: white">Login Now</label></button>
-                    <button class="btn btn-success" type= "submit" name="regin" ><a href="Varsity/Regiterfrom.html"> <label style="color: white">Sign Up</label></a></button>
+                    <button class="btn btn-success" type= "submit" name="login" ><a href="Varsity/Regiterfrom.html"><label style="color: white"> Sign Up</label></a></button>
 
                 </form>
             </div>
-
         </div>
-
-
     </div>
 </div>
 <?php
@@ -165,7 +162,6 @@ if(isset($_POST['login']))
         echo "<script>alert('Login Successfull');window.location.href='usermain.php';</script>";
     else
         echo "<script>alert('Login unuccessfull');</script>";
-
 }
 ?>
 </body>

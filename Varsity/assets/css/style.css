@@ -558,7 +558,7 @@ img {
  ABOUT US COUNTER SECTION
 ====================*/
 #mu-abtus-counter {
-  background-image: url("../img/report1.jpg");
+  background-color:rgba(0,110,255,0.5);
   background-repeat: no-repeat;
   background-size: 100%;
   display: inline;
@@ -670,7 +670,7 @@ img {
  LATEST COURSES SECTION
 ====================*/
 #mu-latest-courses {
-  background-color: #333;
+  background-color: rgba(0,0,250,0.1);
   display: inline;
   float: left;
   padding: 100px 0;
@@ -829,7 +829,7 @@ img {
   transform: translateY(0%);
 }
 #mu-our-teacher .mu-our-teacher-area .mu-our-teacher-content .mu-our-teacher-single .mu-our-teacher-img {
-  background-color: #ccc;
+  background-color:transparent;
   display: inline;
   position: relative;
   float: left;
@@ -1138,7 +1138,14 @@ img {
 }
 
 #mu-course-content {
-  background-color: #f8f8f8;
+  background:linear-gradient(to right,aquamarine,antiquewhite);
+  display: inline;
+  float: left;
+  padding: 100px 0;
+  width: 100%;
+}
+#mu-course-cont {
+  background:linear-gradient(to top,antiquewhite,antiquewhite);
   display: inline;
   float: left;
   padding: 100px 0;
@@ -1149,6 +1156,7 @@ img {
   float: left;
   width: 100%;
 }
+
 #mu-course-content .mu-course-content-area .mu-course-container {
   display: inline;
   float: left;
@@ -1156,6 +1164,7 @@ img {
 }
 #mu-course-content .mu-course-content-area .mu-course-container .mu-latest-course-single {
   border: 1px solid #ccc;
+
   margin-bottom: 30px;
 }
 #mu-course-content .mu-course-content-area .mu-sidebar {
@@ -1164,7 +1173,7 @@ img {
   width: 100%;
 }
 #mu-course-content .mu-course-content-area .mu-sidebar .mu-single-sidebar {
-  background-color: #FFF;
+  background-color: palegreen;
   display: inline;
   float: left;
   margin-bottom: 25px;
@@ -1199,10 +1208,12 @@ img {
   top: 5px;
 }
 #mu-course-content .mu-course-content-area .mu-sidebar .mu-single-sidebar .mu-sidebar-popular-courses {
-  display: inline;
-  float: left;
+  display:inline-flex;
+  /*float: left;*/
   margin-top: 10px;
-  width: 100%;
+  width: 1000px;
+  height: 200px;
+
 }
 #mu-course-content .mu-course-content-area .mu-sidebar .mu-single-sidebar .mu-sidebar-popular-courses .media .media-left .media-object {
   width: 70px;
@@ -1246,9 +1257,9 @@ img {
   -o-transition: all 0.5s;
   transition: all 0.5s;
 }
-#mu-course-content .mu-course-content-area .mu-course-details {
-  background-color: #FFF;
-}
+/*#mu-course-content .mu-course-content-area .mu-course-details {*/
+  /*background-color: red;*/
+/*}*/
 #mu-course-content .mu-course-content-area .mu-course-details .mu-latest-course-single {
   border: none;
 }
@@ -1647,6 +1658,7 @@ img {
  GALLERY PAGE
 ====================*/
 #mu-gallery {
+  background:linear-gradient(to top,palegreen,antiquewhite);
   display: inline;
   float: left;
   padding: 100px 0;
@@ -1808,6 +1820,7 @@ img {
  CONTACT PAGE
 ====================*/
 #mu-contact {
+  background:linear-gradient(to right,#b3d7ff,antiquewhite);
   display: inline;
   float: left;
   padding: 100px 0;
@@ -1848,7 +1861,7 @@ img {
 #mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform input[type="email"],
 #mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform input[type="url"] {
   border: none;
-  border: 1px solid #ddd;
+  border: 1px solid grey;
   color: #555;
   margin-bottom: 10px;
   height: 35px;
@@ -1862,7 +1875,7 @@ img {
 }
 #mu-contact .mu-contact-area .mu-contact-content .mu-contact-left .contactform textarea {
   border: none;
-  border: 1px solid #ddd;
+  border: 1px solid grey;
   color: #555;
   margin-bottom: 5px;
   padding: 10px;

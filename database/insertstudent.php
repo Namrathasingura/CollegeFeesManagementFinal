@@ -24,38 +24,22 @@
     $paid=$_POST['paid'];
     $balance=$_POST['balance'];
 
-//$branch='CSE';
-//$year='1';
-//$quota='SNQ';
-//$type='Hostel';
-//$source='hostel';
-//$fname='Asha';
-//$lname='latha';
-//$bus='9000';
-//$dob='1998/05/26';
-//$admission='18000';
-//$exam='1500';
-//$feast='2500';
-//$stationary='3000';
-//$softskill='3500';
-//$hostel='50000';
-//$total='87500';
-//$paid='0';
-//$balance='87500';
+$status=false;
 
     $query1="insert into tblstudent(fname,mname,username,lname,email,branch,year,quota,type,bus,source,admission,exam,feast,stationary,softskill,hostel,total,paid,balance,dob) 
 values ('$fname','$mname','$uname','$lname','$semail','$branch','$year','$quota','$type','$bus','$source','$admission','$exam','$feast','$stationary','$softskill','$hostel','$total','$paid','$balance','$dob')";
 
 if($conn->query($query1))
 {
-    echo "success";
-    //  $status=true;
+    //echo "<script>alert('Registration Successfull');</script>";
+    $status=true;
 }
 else{
-    echo "error";
-    //  $status=false;
+   // echo "<script>alert('Registration Unsuccessfull');</script>";
+
+    $status=false;
 }
 
-//  echo json_encode($status);
+echo json_encode($status);
 ?>
 

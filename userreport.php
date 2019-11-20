@@ -47,7 +47,14 @@ function filtertable($query)
 
     <script src="database/jquery-3.1.1.js"></script>
     <script src="database/script.js"></script>
-
+    <style>
+        #search{
+            width: 75px;
+            height: 30px;
+            background-color: lightblue;
+            border: 1px solid deepskyblue;
+        }
+    </style>
 </head>
 <?php
 include("php/userheader.php");

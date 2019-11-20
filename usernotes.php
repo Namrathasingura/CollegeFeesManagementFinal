@@ -47,7 +47,17 @@
 
     <script src="database/jquery-3.1.1.js"></script>
     <script src="database/script.js"></script>
-
+    <style>
+        #search{
+            width: 75px;
+            height: 30px;
+            background-color: lightblue;
+            border: 1px solid deepskyblue;
+        }
+        #fa-book{
+            color: blue;
+        }
+    </style>
 </head>
 <?php
 include("php/userheader.php");
@@ -88,7 +98,8 @@ include("php/userheader.php");
                                             <td><?php echo $row['branch'];?></td>
                                             <td><?php echo $row['sem'];?></td>
                                             <td><?php echo $row['notes'];?></td>
-                                           <td><input type="submit" style="width: 10px;" class="note" name="note" id="note" value="<?php echo $row['id'];?>"/></td>
+<!--                                           <td><input type="submit" style="width: 10px;" class="note" name="note" id="note" value="--><?php //echo $row['id'];?><!--"/></td>-->
+                                            <td><button class="note" name="note" id="note" value="<?php echo $row['id'];?> "><i id="fa-book" class="fa fa-book"></i> </button></td>
 
                                         </tr>
                                         <?php endwhile;

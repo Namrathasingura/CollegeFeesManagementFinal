@@ -3,9 +3,7 @@ $(document).ready(function(){
 
     $('#insertuser').click(function(){
     var uname = $('#uname').val();
-
     var phone = $('#phone').val();
-
     var pass = $('#pass').val();
     var conpass = $('#conpass').val();
     var address = $('#address').val();
@@ -165,40 +163,6 @@ $(document).ready(function(){
 
 
         $.ajax({
-            url:'../database/insertreport.php',
-            type: 'post',
-            dataType: 'json',
-            data:{
-                fname:fname,
-                mname:mname,
-                lname:lname,
-                uname:uname,
-                branch:branch,
-                semail:semail,
-                year:year,
-                quota:quota,
-                type:type,
-                source:source,
-                total:total,
-                paid:paid,
-                balance:balance,
-                dob:dob
-            },
-            success:function(result)
-            {
-                if(result)
-                {
-                    alert('Registered');
-                }
-                else{
-                    alert('Failed to Register');
-                }
-
-
-            }
-        })
-
-        $.ajax({
             url:'../database/insertstudent.php',
             type: 'post',
             dataType: 'json',
@@ -245,43 +209,43 @@ $(document).ready(function(){
 
 //-----------------------------------------------------------------------------------
 
-    $('#insertbranch').click(function(){
-        var bname = $('#bname').val();
-
-        var bcode = $('#bcode').val();
-
-        var hod = $('#bhod').val();
-
-// alert(bname);
-// alert(bcode);
-// alert(hod);
-
-
-            $.ajax
-            ({
-
-                url: 'database/branchinsert.php',
-                type: 'post',
-                dataType: 'json',
-                data: {
-                    bname: bname,
-                    bcode: bcode,
-                    hod: hod
-
-                },
-                success: function (result) {
-                    if (result) {
-                        alert('success');
-                    }
-                    else {
-                        alert('failed to insert data');
-                    }
-                }
-            })
-
-    })
-
-
+//     $('#insertbranch').click(function(){
+//         var bname = $('#bname').val();
+//
+//         var bcode = $('#bcode').val();
+//
+//         var hod = $('#bhod').val();
+//
+// // alert(bname);
+// // alert(bcode);
+// // alert(hod);
+//
+//
+//             $.ajax
+//             ({
+//
+//                 url: 'database/branchinsert.php',
+//                 type: 'post',
+//                 dataType: 'json',
+//                 data: {
+//                     bname: bname,
+//                     bcode: bcode,
+//                     hod: hod
+//
+//                 },
+//                 success: function (result) {
+//                     if (result) {
+//                         alert('success');
+//                     }
+//                     else {
+//                         alert('failed to insert data');
+//                     }
+//                 }
+//             })
+//
+//     })
+//
+//
 
 
     //---------------------------------------------------------------------------------
@@ -322,7 +286,7 @@ $(document).ready(function(){
                 {
                     if(result)
                     {
-                        alert('update');
+                        alert('updated');
                         location.reload();
 
                     }
@@ -371,19 +335,13 @@ $(document).ready(function(){
 
     //------------------------------------------------------------------------------------
 
-    $(".note").click(function(e) {
+    $(".note").click(function() {
         var name=$(this).attr("name");
         if(name=='note')
         {
             var noteid = $(this).attr("vals");
             //alert(noteid);
-            // var ele=document.getElementById('note');
-            // ele.onsubmit=function(e)
-            // {
-            //     alert('hi');
-            // e.preventDefault();
-            // e.moveTo("database/opennote.php");
-            // }
+
             $('#formnotes').attr('action','database/opennote.php');
 
             $.ajax
@@ -411,6 +369,60 @@ $(document).ready(function(){
 
         }
     })
+
+    //----------------------------------------------------------------------------------------
+
+
+    // $(".addnote").click(function() {
+    //
+    //   var name=document.getElementById('file1');
+    //   var name=name.files.item(0).name;
+    //   alert (name);
+    //
+    //
+    //
+    // })
+
+    //--------------------------------------------------------------------------------------
+
+    $(".pay").click(function(){
+        var name=$(this).attr("name");
+        if(name=='pay') {
+            var feeid = $(this).attr("vals");
+            //alert(feeid);
+            $(this).closest('tr').find('#total').each(function()
+            {
+                total=$(this).val();
+            })
+
+            $.ajax({
+                url:'database/payfee.php',
+                type: 'post',
+                dataType: 'json',
+                data:{
+                    id:feeid,
+                    total:total
+                },
+                success:function(result)
+                {
+                    if(result)
+                    {
+                        alert('Payment Successfull');
+                        location.reload();
+
+                    }
+                    else{
+                        alert('Failed to Pay');
+                    }
+
+
+                }
+            })
+
+        }
+    })
+
+
     //-----------------------------------------------------------------------------------------
 
     $(".editstudent").click(function(){
@@ -481,7 +493,7 @@ $(document).ready(function(){
                 {
                     if(result)
                     {
-                        alert('update');
+                        alert('updated');
                         location.reload();
 
                     }
@@ -499,79 +511,51 @@ $(document).ready(function(){
         {
             var studentid=$(this).attr("vals");
 
-            var name='';
-            var fname='';
-            var mname='';
-            var lname='';
-            var email='';
-            var dob='';
-            var uname='';
-            $(this).closest('tr').find('#name').each(function()
-            {
-                name=$(this).val();
-                name=name.split(' ');
-                if(name.length>=3)
-                {
-                    fname=name[0];
-                    mname=name[1];
-                    lname=name[2];
-                }
-                else
-                {
-                    fname=name[0];
-                    mname="";
-                    lname=name[1];
-                }
-            })
-            $(this).closest('tr').find('#email').each(function()
-            {
-                email=$(this).val();
-            })
-            $(this).closest('tr').find('#dob').each(function()
-            {
-                dob=$(this).val();
-            })
-            $(this).closest('tr').find('#uname').each(function()
-            {
-                uname=$(this).val();
-            })
+            // var name='';
+            // var fname='';
+            // var mname='';
+            // var lname='';
+            // var email='';
+            // var dob='';
+            // var uname='';
+            // $(this).closest('tr').find('#name').each(function()
+            // {
+            //     name=$(this).val();
+            //     name=name.split(' ');
+            //     if(name.length>=3)
+            //     {
+            //         fname=name[0];
+            //         mname=name[1];
+            //         lname=name[2];
+            //     }
+            //     else
+            //     {
+            //         fname=name[0];
+            //         mname="";
+            //         lname=name[1];
+            //     }
+            // })
+            // $(this).closest('tr').find('#email').each(function()
+            // {
+            //     email=$(this).val();
+            // })
+            // $(this).closest('tr').find('#dob').each(function()
+            // {
+            //     dob=$(this).val();
+            // })
+            // $(this).closest('tr').find('#uname').each(function()
+            // {
+            //     uname=$(this).val();
+            // })
+            //
+            // // alert(studentid);
+            // // alert(email);
+            // // alert(dob);
+            // // alert(uname);
+            // // alert(fname);
+            // // alert(mname);
+            // // alert(lname);
 
-            // alert(studentid);
-            // alert(email);
-            // alert(dob);
-            // alert(uname);
-            // alert(fname);
-            // alert(mname);
-            // alert(lname);
-
-            $.ajax({
-                url:'database/deletereport.php',
-                type: 'post',
-                dataType: 'json',
-                data:{
-
-                    fname:fname,
-                    mname:mname,
-                    lname:lname,
-                    uname:uname,
-                    email:email,
-                    dob:dob
-                },
-                success:function(result)
-                {
-                    if(result)
-                    {
-                        // alert('Deleted');
-                        location.reload();
-
-                    }
-                    else{
-                        alert('Failed to Delete Data');
-                    }
-
-
-                }
-            })
 
             $.ajax({
                 url:'database/deletestudent.php',
@@ -585,7 +569,7 @@ $(document).ready(function(){
                     if(result)
                     {
                         alert('Deleted');
-                        //location.reload();
+                        location.reload();
 
                     }
                     else{

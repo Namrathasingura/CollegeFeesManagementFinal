@@ -18,7 +18,16 @@
 
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
 
-
+    <script src="database/jquery-3.1.1.js"></script>
+    <script src="database/script.js"></script>
+    <style>
+        .mu-post-btn{
+            width: 75px;
+            height: 30px;
+            background-color: lightblue;
+            border: 1px solid deepskyblue;
+        }
+    </style>
 </head>
 <?php
 include("php/userheader.php");
@@ -31,58 +40,44 @@ include("php/userheader.php");
             <div class="col-md-12">
                 <div class="row" >
                     <div class="col-md-12">
-                        <h2 class="page-header" ><strong>Notes</strong>
-                            <a href="fees.php" class="btn btn-primary btn-sm pull-right" style="background-color: darkblue"><i class="glyphicon glyphicon-plus"></i> Add </a></h2>
+                        <h2 class="page-header" ><strong>Add Notes</strong>
+                        </h2>
 
 
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                                Manage Notes
+                                Enter Details
                             </div>
                             <div class="panel-body">
                                 <div class="table-sorting table-responsive">
                                     <!--  SHOW ENTRIES-->
-                                    <div id="tSortable22_length" class="dataTables_length"><label>Show <select size="1" name="tSortable22_length" aria-controls="tSortable22"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div>
-                                    <!--      -->
-                                    <div class="dataTables_filter" id="tSortable22_filter"><label><i class="fa fa-search"></i> <input type="text" aria-controls="tSortable22"></label></div>
-                                    <table class="table table-striped table-bordered table-hover" id="tSortable22">
-                                        <thead>
-                                        <tr>
-                                            <th>Id</th>
-                                            <th>Bcode</th>
-                                            <th>Sem</th>
-                                            <th>Notes</th>
-                                            <th>Action</th>
-                                        </tr>
-                                        <?php
-                                        include 'database/connect.php';
-                                        $sql="SELECT n.id,b.bcode,b.sem,n.notes FROM tblnotes n,tblbranch b where b.id=n.bid";
-                                        $result=$conn->query($sql);
-                                        if($result->num_rows>0)
-                                        {
-                                        while ($row = $result->fetch_assoc())
-                                        {
-                                        ?>
-                                        <tr>
+                                    <form class="contactform" action="database/changepass.php" method="post">
 
-                                            <td ><input type="text" id="id" value="<?php echo $row['id']; ?>"/></td>
-                                            <td ><input type="text" id="sem" value="<?php echo $row['bcode']; ?>"/></td>
-                                            <td ><input type="text" value="<?php echo $row['sem']; ?>"/></td>
-                                            <td ><input type="text" value="<?php echo $row['notes']; ?>"/></td>
+                                        <p class="comment-form-author">
+                                            <label for="author">Username <span class="required">*</span></label><br/>
+                                            <input type="text" id="bhod" required="required" size="30" value="" name="uname">
+                                        </p>
 
-                                            <td>
-                                                <a href="branch.php?action=edit&id='.$r['id'].'" class="btn btn-primary btn-xs" style="background-color: darkblue;text-align: center"><span class="fa fa-edit"></span></a>
+                                        <p class="comment-form-author">
+                                            <label for="author">Current Password <span class="required">*</span></label><br/>
+                                            <input type="text" id="bname" required="required" size="30" value="" name="cpass">
+                                        </p>
+                                        <p class="comment-form-author">
+                                            <label for="author">New Password <span class="required">*</span></label><br/>
+                                            <input type="text" id="bcode" required="required" size="30" value="" name="npass">
+                                        </p>
+                                        <p class="comment-form-author">
+                                            <label for="author">Confirm Password <span class="required">*</span></label><br/>
+                                            <input type="text" id="bcode" required="required" size="30" value="" name="conpass">
+                                        </p>
 
-                                                <a href="branch.php?action=delete&id='.$r['id'].'" class="btn btn-danger btn-xs" style="background-color: crimson"><span class="fa fa-remove"></span></a>
-                                            </td>
-                                        </tr>
 
-                                        </thead>
-                                        <?php
-                                        }
-                                        }
-                                        ?>
-                                    </table>
+
+
+                                        <p class="form-submit">
+                                            <input type="submit"  value="Submit" class="mu-post-btn" name="submit">
+                                        </p>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -96,3 +91,128 @@ include("php/userheader.php");
 
 </body>
 </html>
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="utf-8">-->
+<!--    <meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--    <title>CollegeFeesManagement| Register</title>-->
+<!---->
+<!--    <!-- Favicon -->-->
+<!--    <link rel="shortcut icon" href="Varsity/assets/img/favicon.ico" type="image/x-icon">-->
+<!---->
+<!--    <!-- Font awesome -->-->
+<!--    <link href="Varsity/assets/css/font-awesome.css" rel="stylesheet">-->
+<!--    <!-- Bootstrap -->-->
+<!--    <link href="Varsity/assets/css/bootstrap.css" rel="stylesheet">-->
+<!--    <!-- Slick slider -->-->
+<!--    <link rel="stylesheet" type="text/css" href="Varsity/assets/css/slick.css">-->
+<!--    <!-- Fancybox slider -->-->
+<!---->
+<!--    <!--<link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="screen" />-->-->
+<!---->
+<!--    <!-- Theme color -->-->
+<!--    <link id="switcher" href="Varsity/assets/css/theme-color/default-theme.css" rel="stylesheet">-->
+<!---->
+<!--    <!-- Main style sheet -->-->
+<!--    <link href="Varsity/assets/css/style.css" rel="stylesheet">-->
+<!---->
+<!---->
+<!--    <!-- Google Fonts -->-->
+<!--    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>-->
+<!--    <link href='https://fonts.googleapis.com/css?family=Roboto:400,400italic,300,300italic,500,700' rel='stylesheet' type='text/css'>-->
+<!---->
+<!--    <script src="database/jquery-3.1.1.js"></script>-->
+<!--    <script src="database/script.js"></script>-->
+<!---->
+<!--</head>-->
+<!--<body>-->
+<!---->
+<!---->
+<!--<!-- Start contact  -->-->
+<!--<section id="mu-contact">-->
+<!--    <div class="container">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                <div class="mu-contact-area">-->
+<!--                    <!-- start title -->-->
+<!--                    <div class="mu-title">-->
+<!--                        <h2>Add Branch</h2>-->
+<!--                    </div>-->
+<!--                    <!-- end title -->-->
+<!--                    <!-- start contact content -->-->
+<!--                    <div class="mu-contact-content">-->
+<!--                        <div class="row">-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="mu-contact-left">-->
+<!--                                    <form class="contactform">-->
+<!--                                        <p class="comment-form-author">-->
+<!--                                            <label for="author">Branch Name <span class="required">*</span></label>-->
+<!--                                            <input type="text" id="bname" required="required" size="30" value="" name="author">-->
+<!--                                        </p>-->
+<!--                                        <p class="comment-form-author">-->
+<!--                                            <label for="author">Branch Code <span class="required">*</span></label>-->
+<!--                                            <input type="text" id="bcode" required="required" size="30" value="" name="author">-->
+<!--                                        </p>-->
+<!---->
+<!---->
+<!--                                        <p class="comment-form-author">-->
+<!--                                            <label for="author">Branch HOD <span class="required">*</span></label>-->
+<!--                                            <input type="text" id="bhod" required="required" size="30" value="" name="author">-->
+<!--                                        </p>-->
+<!---->
+<!---->
+<!--                                        <p class="form-submit">-->
+<!--                                            <input type="submit" id="insertbranch" value="Submit" class="mu-post-btn" name="submit">-->
+<!--                                        </p>-->
+<!--                                    </form>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="col-md-6">-->
+<!--                                <div class="mu-contact-right">-->
+<!--                                    <img src="img/reg1.jpg" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></img>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <!-- end contact content -->-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!--<!-- End contact  -->-->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!---->
+<!--<!-- jQuery library -->-->
+<!--<script src="Varsity/assets/js/jquery.min.js"></script>-->
+<!--<!-- Include all compiled plugins (below), or include individual files as needed -->-->
+<!--<script src="Varsity/assets/js/bootstrap.js"></script>-->
+<!--<!-- Slick slider -->-->
+<!--<script type="text/javascript" src="Varsity/assets/js/slick.js"></script>-->
+<!--<!-- Counter -->-->
+<!--<script type="text/javascript" src="Varsity/assets/js/waypoints.js"></script>-->
+<!--<script type="text/javascript" src="Varsity/assets/js/jquery.counterup.js"></script>-->
+<!--<!-- Mixit slider -->-->
+<!--<script type="text/javascript" src="Varsity/assets/js/jquery.mixitup.js"></script>-->
+<!--<!-- Add fancyBox -->-->
+<!--<script type="text/javascript" src="Varsity/assets/js/jquery.fancybox.pack.js"></script>-->
+<!---->
+<!--<!-- Custom js -->-->
+<!--<script src="Varsity/assets/js/custom.js"></script>-->
+<!---->
+<!--</body>-->
+<!--</html>-->

@@ -29,8 +29,8 @@
 include("php/header.php");
 ?>
 <div id="page-wrapper">
-    <div id="page-inner"  >
-        <div class="row" >
+    <div id="page-inner">
+        <div class="row">
             <div class="col-md-12">
                 <h2 class="page-header" ><strong>DASHBOARD</strong></h2>
                 <h2 style="text-align:center;"><strong style="color: black;font-size: 40px;text-shadow: 2px 7px 2px darkgrey">Welcome to College Fees Management System</strong> </h2>
@@ -39,10 +39,8 @@ include("php/header.php");
         </div>
         <!--  Student row  -->
         <div class="row">
-
             <div class="col-md-4">
                 <div class="main-box bg-success">
-
                     <a href="student.php">
                         <img src="img/student1.jpg"/>
                         <h1 style="color: darkblue;text-shadow: 6px 7px 2px darkgrey;font-family: 'Blackadder ITC';"><strong>Students</strong></h1>
@@ -72,16 +70,12 @@ include("php/header.php");
                         <img src="img/report.jpg" >
                         <h1 style="color: darkblue; text-shadow: 6px 7px 2px darkgrey;font-family: 'Blackadder ITC'">Report</h1>
                     </a>
-
                     <strong style="color: ">You Can Find The Information About Report of the Students  CLICK HERE</strong>
                 </div>
             </div>
             <!--  Report row end  -->
-
         </div>
-
     </div>
 </div>
-
 </body>
 </html>

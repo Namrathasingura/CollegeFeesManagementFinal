@@ -3,7 +3,6 @@
 <div id="wrapper">
     <nav class="navbar navbar-default navbar-cls-top " id="hori" role="navigation" style="margin-bottom: 0;text-align: center;color: white;font-family: 'Droid Sans Mono';background:linear-gradient(to right,midnightblue,black)"><h1>College Fees Management System</h1>
         <div class="navbar-header">
-            <a class="navbar-brand" style="margin-top: -70px;background:linear-gradient(to right,black,midnightblue)"><img src="img/college-2.jpg" style="width: 150px; height: 100px; margin-top: -30px;"></a>
         </div>
     </nav>
     <!-- /. NAV TOP  -->
@@ -29,7 +28,7 @@
                 </li>
 
                 <li>
-                    <a href="usersetting.php"><i class="fa fa-cogs "></i><strong>Setting</strong></a>
+                    <a href="usersetting.php"><i class="fa fa-cogs "></i><strong>Password Setting</strong></a>
                 </li>
                 <li>
                     <a href="logout.php"><i class="fa fa-power-off "></i><strong>Logout</strong></a>

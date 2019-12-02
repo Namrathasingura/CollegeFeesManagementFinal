@@ -19,24 +19,10 @@
     <script src="database/jquery-3.1.1.js"></script>
     <script src="database/script.js"></script>
     <script>
-        function showpopup1() {
-            // alert(vals);
-            $('.popup1').animate({top:'1%'},500);
-        }
-        function hidepopup1() {
-            $('.popup1').animate({top:'-500%'},500);
-        }
+
     </script>
     <style>
-        .popup1{
-            position: fixed;
-            top: -500%;
-            width: 40%;
-            margin-left: 30%;
-            background-color: white;
-            box-shadow: 2px 3px 8px slategrey;
-            border-radius: 5px;
-        }
+
         button{
             width: 10px;
             border: none;

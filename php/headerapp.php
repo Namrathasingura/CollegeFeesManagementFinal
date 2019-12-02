@@ -34,6 +34,9 @@
                     <a href="../setting.php"><i class="fa fa-cogs "></i><strong>Setting</strong></a>
                 </li>
                 <li>
+                    <a href="user.php" ><i class="fa fa-question-circle "></i><strong>Contact Queries</strong></a>
+                </li>
+                <li>
                     <a href="../logout.php"><i class="fa fa-power-off "></i><strong>Logout</strong></a>
                 </li>
             </ul>

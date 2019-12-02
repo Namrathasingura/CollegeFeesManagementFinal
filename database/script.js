@@ -370,6 +370,42 @@ $(document).ready(function(){
         }
     })
 
+  //------------------------------------------------------------
+
+     $(".deletenotes").click(function() {
+         var noteid='';
+         $(this).closest('tr').find('#deletenotes').each(function()
+         {
+              noteid=$(this).val();
+         })
+            //alert(noteid);
+
+            $.ajax
+            ({
+
+                url : 'database/deletenotes.php',
+                type : 'post',
+                dataType : 'json',
+                data : {
+                    noteid:noteid,
+                },
+                success: function(result)
+                {
+                    if(result)
+                    {
+                        alert('success');
+
+
+                    }
+                    else{
+                        alert('failed to delete data');
+                    }
+                }
+            })
+
+
+    })
+
     //----------------------------------------------------------------------------------------
 
 
@@ -468,7 +504,7 @@ $(document).ready(function(){
                 uname=$(this).val();
             })
 
-            // alert(studentid);
+             // alert(studentid);
             // alert(email);
             // alert(dob);
             // alert(uname);
@@ -510,52 +546,6 @@ $(document).ready(function(){
         else if(name=='delete')
         {
             var studentid=$(this).attr("vals");
-
-            // var name='';
-            // var fname='';
-            // var mname='';
-            // var lname='';
-            // var email='';
-            // var dob='';
-            // var uname='';
-            // $(this).closest('tr').find('#name').each(function()
-            // {
-            //     name=$(this).val();
-            //     name=name.split(' ');
-            //     if(name.length>=3)
-            //     {
-            //         fname=name[0];
-            //         mname=name[1];
-            //         lname=name[2];
-            //     }
-            //     else
-            //     {
-            //         fname=name[0];
-            //         mname="";
-            //         lname=name[1];
-            //     }
-            // })
-            // $(this).closest('tr').find('#email').each(function()
-            // {
-            //     email=$(this).val();
-            // })
-            // $(this).closest('tr').find('#dob').each(function()
-            // {
-            //     dob=$(this).val();
-            // })
-            // $(this).closest('tr').find('#uname').each(function()
-            // {
-            //     uname=$(this).val();
-            // })
-            //
-            // // alert(studentid);
-            // // alert(email);
-            // // alert(dob);
-            // // alert(uname);
-            // // alert(fname);
-            // // alert(mname);
-            // // alert(lname);
-
 
             $.ajax({
                 url:'database/deletestudent.php',

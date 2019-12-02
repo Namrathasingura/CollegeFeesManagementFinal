@@ -41,7 +41,7 @@ include("php/header.php");
             <div class="col-md-12">
                 <div class="row" >
                     <div class="col-md-12">
-                        <h2 class="page-header" ><strong>Add Notes</strong>
+                        <h2 class="page-header" ><strong>Add Branch</strong>
                         </h2>
 
 

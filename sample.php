@@ -53,7 +53,7 @@ include("php/header.php");
                             <div class="panel-body">
                                 <div class="table-sorting table-responsive">
                                     <!--  SHOW ENTRIES-->
-                                    <form action="database/upload.php" enctype="multipart/form-data" method="post" id="formnotes">
+                                    <form action="database/upload.php" name="form" enctype="multipart/form-data" method="post" id="formnotes">
                                         <?php
                                         include "database/connect.php";
                                         $query1="SELECT distinct branch FROM tblfee";
@@ -71,8 +71,8 @@ include("php/header.php");
                                             </select><br/><br/><br/>
                                             <input name="sem"  required="required" style="width="40px""  type="number"  min="1" max="8" id="sem" placeholder="Sem"/><br/><br/><br/>
 
-                                            <input name="file1"  type="file"  id="notes" required="required" /><br/><br/><br/>
-                                            <input type="submit" name="addnote" class="addnote pull-right" id="addnote" value="Add"/></div>
+                                            <input type="file" name="file1" required="required" /><br/><br/><br/>
+                                            <input type="submit" name="submit" class="addnote pull-right" id="addnote" value="Upload"/></div>
 
                                     </form>
                                 </div>

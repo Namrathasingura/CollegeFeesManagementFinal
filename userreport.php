@@ -2,7 +2,8 @@
 if(isset($_POST['search']))
 {
     $valuesearch=$_POST['valuesearch'];
-    $query="SELECT * FROM `tblstudent` WHERE email= '".$valuesearch."'";
+    $uid=$_POST['username'];
+    $query="SELECT * FROM `tblstudent` WHERE email= '".$valuesearch."' and username='".$uid."'";
     $search_result=filtertable($query);
 }
 

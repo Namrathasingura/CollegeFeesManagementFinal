@@ -26,6 +26,8 @@ include("php/header.php");
         <div class="row" >
             <div class="col-md-12">
                 <h2 class="page-header" ><strong>SETTING</strong>
+                    <a href="Varsity/admininsert.php" class="btn btn-primary btn-sm pull-right" style="background-color: darkblue"><i class="glyphicon glyphicon-plus"></i> Add </a></h2>
+
             </div>
 
             <div class="row">
@@ -36,6 +38,14 @@ include("php/header.php");
                         </div>
                         <form action="database/adminpass.php" method="post" id="signupForm1" class="form-horizontal">
                             <div class="panel-body">
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="Old">Name</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" class="form-control" id="name" name="name"  />
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label class="col-sm-4 control-label" for="Old">Old Password</label>
                                     <div class="col-sm-5">

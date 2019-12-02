@@ -62,7 +62,12 @@ function filtertable($query)
         #fa-book{
             color: blue;
         }
+        #fa-trash{
+            color: blue;
+        }
     </style>
+
+
 </head>
 <?php
 include("php/header.php");
@@ -80,13 +85,13 @@ include("php/header.php");
 
                         </h2>
 
+                        <div class="panel-body">
+                            <div class="table-sorting table-responsive">
 
                         <div class="panel panel-success">
                             <div class="panel-heading">
                                 Notes
                             </div>
-                            <div class="panel-body">
-                                <div class="table-sorting table-responsive">
                                     <!--  SHOW ENTRIES-->
                                     <form action="" method="post" id="formnotes">
                                         <div id="tSortable22_length" class="dataTables_length"><input name="valuesearch"  type="text"  id="valuesearch" placeholder="Enter value to search"/></label></div>
@@ -107,6 +112,7 @@ include("php/header.php");
                                                     <td><?php echo $row['notes'];?></td>
 <!--                                                    <td><input type="submit" class="note fa  fa-book" name="note" id="note" value="--><?php //echo $row['id'];?><!--"/><- CLICK HERE </td>-->
                                                     <td><button class="note" name="note" id="note" value="<?php echo $row['id'];?> "><i id="fa-book" class="fa fa-book"></i> </button></td>
+                                                    <td><button class="deletenotes" name="delete"  id="deletenotes" value="<?php echo $row['id'];?> "><i id="fa-trash" class="fa fa-trash"></i> </button></td>
                                                 </tr>
                                             <?php endwhile;
                                             ?>

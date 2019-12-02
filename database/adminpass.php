@@ -2,7 +2,7 @@
 
 include 'connect.php';
 
-
+$name=$_POST['name'];
 $opass=$_POST['opass'];
 $npass=$_POST['npass'];
 $cpass=$_POST['cpass'];
@@ -15,7 +15,7 @@ $cpass=$_POST['cpass'];
 //$status=false;
 if($npass==$cpass)
 {
-    $sql="update tbladmin set password='$npass' where  password='$opass'";
+    $sql="update tbladmin set password='$npass' where  password='$opass' and name='$name'";
     if($conn->query($sql))
     {
         echo "<script>alert('Password Updated');</script>";

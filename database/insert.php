@@ -14,11 +14,9 @@ $sql="INSERT into student(name,email,D_id,gender,password) values('$name','$emai
  if($conn->query($sql))
  {
      echo "success";
-    //  $status=true;
  }
  else{
      echo "error";
-    //  $status=false;
  }
 
 //  echo json_encode($status);

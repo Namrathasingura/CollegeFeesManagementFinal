@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>LOGIN TO EDUUNIVERSITY</title>
+    <title>LOGIN TO COLLEGE FEES MANAGEMENT</title>
 
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/font-awesome.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
                             <div class="mu-header-top-left">
                                 <div class="mu-top-email">
                                     <i class="fa fa-envelope"></i>
-                                    <span>eduuniversity@gmail.com</span>
+                                    <span>sdit@gmail.com</span>
                                 </div>
                                 <div class="mu-top-phone">
                                     <i class="fa fa-phone"></i>
@@ -95,7 +95,7 @@
                 <!-- LOGO -->
                 <!-- TEXT BASED LOGO -->
                 <img src="img/univer.jpg" style="width: 60px; height: 60px;/">
-                <a class="navbar-brand" href="index.html"><span style="font-style: oblique">EDU University</span></a>
+                <a class="navbar-brand" href="index.html"><span style="font-style: oblique">Shree Devi Institute Of Technology</span></a>
 
             </div>
             <div id="navbar" class="navbar-collapse collapse">
@@ -128,21 +128,11 @@
                         <span class="input-group-addon"><i class="fa fa-tag"  ></i></span>
                         <input type="text" class="form-control" placeholder="Your Username " name="username" required />
                     </div>
-
                     <div class="form-group input-group">
                         <span class="input-group-addon"><i class="fa fa-lock"  ></i></span>
                         <input type="password" class="form-control"  placeholder="Your Password" name="password" required />
                     </div>
-
-<!--                    <div class="form-group">-->
-<!---->
-<!--                     <span class="pull-right">-->
-<!--                      <a href="index.html"  style="color: #5a95ba" >Forget password ? </a>-->
-<!--                     </span>-->
-<!--                    </div>-->
-
                     <button class="btn btn-success" type= "submit" name="login" > <label style="color: white">Login Now</label></button>
-
                 </form>
             </div>
         </div>
@@ -157,8 +147,13 @@ if(isset($_POST['login']))
     include 'sql.php';
     $str="select * from tbladmin where name='$username' and password='$pass'";
     $res=mysqli_query($sql,$str);
-    if(mysqli_num_rows($res)>0)
+    if(mysqli_num_rows($res)>0){
+        session_start();
+        $_SESSION["username"]=$username;
+        $_SESSION["password"]=$pass;
+
         echo "<script>alert('Login Successfull');window.location.href='mainpage.php';</script>";
+        }
     else
         echo "<script>alert('Login unuccessfull');</script>";
 }

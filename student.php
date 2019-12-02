@@ -66,7 +66,11 @@ include("php/header.php");
                 <div class="row" >
                     <div class="col-md-12">
                         <h2 class="page-header" ><strong>STUDENTS</strong>
-                            <a href="Varsity/application.php" class="btn btn-primary btn-sm pull-right" style="background-color: darkblue"><i class="glyphicon glyphicon-plus"></i> Add </a></h2>
+                            <a href="Varsity/application1.php" class="btn btn-primary btn-sm pull-right" style="background-color: darkblue"><i class="glyphicon glyphicon-plus"></i> Add </a></h2>
+                        <form action="test.php" method="post">
+                            <input type="text" name='uid' placeholder="Enter id to view details"/>
+                            <button>view</button>
+                        </form>
 
                         <div class="panel panel-success">
                             <div class="panel-heading">
@@ -74,11 +78,7 @@ include("php/header.php");
                             </div>
                             <div class="panel-body">
                                 <div class="table-sorting table-responsive">
-                                    <!--  SHOW ENTRIES-->
-<!--                                    <div id="tSortable22_length" class="dataTables_length"><label>Show <select size="1" name="tSortable22_length" aria-controls="tSortable22"><option value="10" selected="selected">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div>-->
-                                        <!--      -->
-<!--                                    <div class="dataTables_filter" id="tSortable22_filter"><label><i class="fa fa-search"></i> <input type="text" aria-controls="tSortable22"></label></div>-->
-                                    <table class="table table-striped table-bordered table-hover" id="tSortable22"  style="width: 50px; ">
+                                 <table class="table table-striped table-bordered table-hover" id="tSortable22"  style="width: 50px; ">
                                         <thead>
                                         <tr>
 
@@ -102,15 +102,15 @@ include("php/header.php");
                                         ?>
                                         <tr>
 
-                                            <td ><input type="text" id="id" value="<?php echo $row['id']; ?>"/></td>
+                                            <td ><input type="text" id="id"  value="<?php echo $row['id']; ?>"/></td>
                                             <td ><input type="text" id="name" value="<?php echo $row['fname']." ".$row['mname']." ".$row['lname'] ; ?>"/></td>
 <!--                                            <td ><input type="text" value="--><?php //echo $row['lname']; ?><!--"/></td>-->
                                             <td ><input type="text" id="email" value="<?php echo $row['email']; ?>"/></td>
                                             <td ><input type="date" id="dob" value="<?php echo $row['dob']; ?>"/></td>
                                             <td ><input type="text" id="uname" value="<?php echo $row['username']; ?>"/></td>
 
-                                            <td >
-                                                <button class="editstudent" onclick="showpopup()" name="view" vals="<?php echo $row['id'];?>"><i  class="fa fa-eye"></i> </button>&nbsp;</button></td>
+<!--                                            <td >-->
+<!--                                              <a href="test.php"> <button class="editstudent"  name="view" vals="--><?php //echo $row['id'];?><!--"><i  class="fa fa-eye"></i> </button>&nbsp;</button></a></td>-->
                                             <td> <button class="editstudent" name="update" vals="<?php echo $row['id'];?>"><i  class="fa fa-edit"></i> </button>&nbsp;</button></td>
                                                <td> <button class="editstudent" name="delete" vals="<?php echo $row['id'];?>"><i  class="fa fa-trash"></i> </button>&nbsp;&nbsp;</button>
                                             </td>
@@ -134,150 +134,148 @@ include("php/header.php");
 <!------------------------------------------------------------------------------------->
 
 
-<div class="popup1">
-
-
-    <div class="panel panel-success">
-        <div class="panel-heading">
-            Student Details
-            <button class="pull-right" onclick="hidepopup()" style="border: none;background-color: transparent">x</button>
-        </div>
-        <div class="panel-body">
-            <div class="table-sorting table-responsive">
-                <!--  SHOW ENTRIES-->
-                <form action="" method="post" id="formnotes">
-                   <!--                                        --><?php
-                    //   while ($row=mysqli_fetch_array($search_result)):?>
-                    <table class="table table-striped table-bordered table-hover" id="tSortable22">
-                        <label id="uname" class="pull-right">Reference:ash@gmail.com</label>
-                        <!--                                            <label id="uname" class="pull-right">Reference: --><?php //echo $row['username'];?><!--</label>-->
-
-                        <thead>
-
-                        <tr>
-                            <td id="name" ><strong>Name :</strong>asha b u</td>
-                            <td id="branch" ><strong>Branch :</strong>CSE</td>
-                            <td id="year" ><strong>Year :</strong>2019</td>
-                            <td id="dob"><strong>DOB :</strong>98/09/8765</td>
-
-                            <!--                                                <td id="name" ><strong>Name :</strong>--><?php //echo $row['fname']." ".$row['mname']." ".$row['lname'];?><!--</td>-->
-                            <!--                                                <td id="branch" ><strong>Branch :</strong>--><?php //echo $row['branch']?><!--</td>-->
-                            <!--                                                <td id="year" ><strong>Year :</strong>--><?php //echo $row['year']?><!--</td>-->
-                            <!--                                                <td id="dob"><strong>DOB :</strong>--><?php //echo $row['dob']?><!--</td>-->
-                        </tr>
-
-                        <tr><td ><strong>Email:</strong></td>
-                            <td colspan="3" id="semail">nam@gmail.com</td> </tr>
-                        <!--                                                <td colspan="3" id="semail">--><?php //echo $row['email']?><!--</td> </tr>-->
-
-                        <tr>
-                            <th colspan="2">Particular</th>
-                            <th colspan="2" >Amount</th>
-                        </tr>
-                        <tr>
-                            <td colspan="2"> Admission fee</td>
-                            <td colspan="2" id="admission">8765</td>
-                            <!--                                                <td colspan="2" id="admission">--><?php //echo $row['admission']?><!--</td>-->
-                        </tr>
-                        <tr>
-
-                            <td colspan="2"> Exam fee</td>
-                            <td colspan="2" id="exam">7665</td>
-                            <!--                                                <td colspan="2" id="exam">--><?php //echo $row['exam']?><!--</td>-->
-
-                        </tr>
-                        <tr>
-
-                            <td colspan="2">Feast Fee</td>
-                            <td colspan="2" id="feast">6789</td>
-                            <!--                                                <td colspan="2" id="feast">--><?php //echo $row['feast']?><!-- </td>-->
-
-                        </tr>
-                        <tr>
-
-                            <td colspan="2"> Stationary Fee</td>
-                            <td colspan="2" id="stationary"> 9876</td>
-                            <!--                                                <td colspan="2" id="stationary"> --><?php //echo $row['stationary']?><!--</td>-->
-
-
-                        </tr>
-                        <tr>
-
-                            <td colspan="2">SoftSkill</td>
-                            <td colspan="2" id="softskill"> 7346</td>
-                            <!--                                                <td colspan="2" id="softskill"> --><?php //echo $row['softskill']?><!--</td>-->
-
-                        </tr>
-
-                        <tr>
-
-                            <td colspan="2">Hostel Fee</td>
-                            <td colspan="2" id="hostel">6855</td>
-                            <!--                                                <td colspan="2" id="hostel">--><?php //echo $row['hostel']?><!--</td>-->
-
-
-                        </tr>
-
-
-                        <tr>
-
-                            <td colspan="2">Bus Fee</td>
-                            <td colspan="2" id="bus">3265</td>
-                            <!--                                                <td colspan="2" id="bus">--><?php //echo $row['bus']?><!--</td>-->
-
-
-                        </tr>
-
-                        <tr><td colspan="4"></td> </tr>
-                        <tr>
-
-                            <td colspan="2">Bus Source</td>
-                            <td colspan="2" id="source">hostel</td>
-                            <!--                                                <td colspan="2" id="source">--><?php //echo $row['source']?><!--</td>-->
-
-                        </tr>
-
-                        <tr>
-
-                            <td colspan="2">Total</td>
-                            <td colspan="2" id="total">325965</td>
-                            <!--                                                <td colspan="2" id="total">--><?php //echo $row['total']?><!--</td>-->
-
-
-                        </tr>
-
-
-                        <tr>
-
-                            <td colspan="2">Paid</td>
-                            <td colspan="2" id="paid">325965</td>
-                            <!--                                                <td colspan="2" id="paid">--><?php //echo $row['paid']?><!--</td>-->
-
-
-                        </tr>
-
-                        <tr>
-
-                            <td colspan="2">Balance</td>
-                            <td colspan="2" id="balance">0</td>
-                            <!--                                                <td colspan="2" id="balance">--><?php //echo $row['balance']?><!--</td>-->
-
-
-                        </tr>
-
-                        <!--                                            --><?php //endwhile;
-                        //                                            ?>
-
-                        </thead>
-
-                    </table>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
+<!--<div class="popup1">-->
+<!---->
+<!---->
+<!--    <div class="panel panel-success">-->
+<!--        <div class="panel-heading">-->
+<!--            Student Details-->
+<!--            <button class="pull-right" onclick="hidepopup()" style="border: none;background-color: transparent">x</button>-->
+<!--        </div>-->
+<!--        <div class="panel-body">-->
+<!--            <div class="table-sorting table-responsive">-->
+<!--                <!--  SHOW ENTRIES-->-->
+<!--                <form action="" method="post" id="formnotes">-->
+<!--                    --><?php
+//                    while ($row=mysqli_fetch_array($search_result)):?>
+<!--                    <table class="table table-striped table-bordered table-hover" id="tSortable22">-->
+<!--                        <!--                        <label id="uname" class="pull-right">Reference:ash@gmail.com</label>-->-->
+<!--                        <label id="uname" class="pull-right">Reference: --><?php //echo $row['username'];?><!--</label>-->
+<!---->
+<!--                        <thead>-->
+<!---->
+<!--                        <tr>-->
+<!--                            <!--                            <td id="name" ><strong>Name :</strong>asha b u</td>-->-->
+<!--                            <!--                            <td id="branch" ><strong>Branch :</strong>CSE</td>-->-->
+<!--                            <!--                            <td id="year" ><strong>Year :</strong>2019</td>-->-->
+<!--                            <!--                            <td id="dob"><strong>DOB :</strong>98/09/8765</td>-->-->
+<!---->
+<!--                            <td id="name" ><strong>Name :</strong>--><?php //echo $row['fname']." ".$row['mname']." ".$row['lname'];?><!--</td>-->
+<!--                            <td id="branch" ><strong>Branch :</strong>--><?php //echo $row['branch']?><!--</td>-->
+<!--                            <td id="year" ><strong>Year :</strong>--><?php //echo $row['year']?><!--</td>-->
+<!--                            <td id="dob"><strong>DOB :</strong>--><?php //echo $row['dob']?><!--</td>-->
+<!--                        </tr>-->
+<!---->
+<!--                        <tr><td ><strong>Email:</strong></td>-->
+<!--                            <!--                            <td colspan="3" id="semail">nam@gmail.com</td> </tr>-->-->
+<!--                            <td colspan="3" id="semail">--><?php //echo $row['email']?><!--</td> </tr>-->
+<!---->
+<!--                        <tr>-->
+<!--                            <th colspan="2">Particular</th>-->
+<!--                            <th colspan="2" >Amount</th>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!--                            <td colspan="2"> Admission fee</td>-->
+<!--                            <!--                            <td colspan="2" id="admission">8765</td>-->-->
+<!--                            <td colspan="2" id="admission">--><?php //echo $row['admission']?><!--</td>-->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2"> Exam fee</td>-->
+<!--                            <!--                            <td colspan="2" id="exam">7665</td>-->-->
+<!--                            <td colspan="2" id="exam">--><?php //echo $row['exam']?><!--</td>-->
+<!---->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2">Feast Fee</td>-->
+<!--                            <!--                            <td colspan="2" id="feast">6789</td>-->-->
+<!--                            <td colspan="2" id="feast">--><?php //echo $row['feast']?><!-- </td>-->
+<!---->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2"> Stationary Fee</td>-->
+<!--                            <!--                            <td colspan="2" id="stationary"> 9876</td>-->-->
+<!--                            <td colspan="2" id="stationary"> --><?php //echo $row['stationary']?><!--</td>-->
+<!---->
+<!---->
+<!--                        </tr>-->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2">SoftSkill</td>-->
+<!--                            <!--                            <td colspan="2" id="softskill"> 7346</td>-->-->
+<!--                            <td colspan="2" id="softskill"> --><?php //echo $row['softskill']?><!--</td>-->
+<!---->
+<!--                        </tr>-->
+<!---->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2">Hostel Fee</td>-->
+<!--                            <!--                            <td colspan="2" id="hostel">6855</td>-->-->
+<!--                            <td colspan="2" id="hostel">--><?php //echo $row['hostel']?><!--</td>-->
+<!---->
+<!---->
+<!--                        </tr>-->
+<!---->
+<!---->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2">Bus Fee</td>-->
+<!--                            <!--                            <td colspan="2" id="bus">3265</td>-->-->
+<!--                            <td colspan="2" id="bus">--><?php //echo $row['bus']?><!--</td>-->
+<!---->
+<!---->
+<!--                        </tr>-->
+<!---->
+<!--                        <tr><td colspan="4"></td> </tr>-->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2">Bus Source</td>-->
+<!--                            <!--                            <td colspan="2" id="source">hostel</td>-->-->
+<!--                            <td colspan="2" id="source">--><?php //echo $row['source']?><!--</td>-->
+<!---->
+<!--                        </tr>-->
+<!---->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2">Total</td>-->
+<!--                            <!--                            <td colspan="2" id="total">325965</td>-->-->
+<!--                            <td colspan="2" id="total">--><?php //echo $row['total']?><!--</td>-->
+<!---->
+<!---->
+<!--                        </tr>-->
+<!---->
+<!---->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2">Paid</td>-->
+<!--                            <!--                            <td colspan="2" id="paid">325965</td>-->-->
+<!--                            <td colspan="2" id="paid">--><?php //echo $row['paid']?><!--</td>-->
+<!---->
+<!---->
+<!--                        </tr>-->
+<!---->
+<!--                        <tr>-->
+<!---->
+<!--                            <td colspan="2">Balance</td>-->
+<!--                            <!--                            <td colspan="2" id="balance">0</td>-->-->
+<!--                            <td colspan="2" id="balance">--><?php //echo $row['balance']?><!--</td>-->
+<!---->
+<!---->
+<!--                        </tr>-->
+<!---->
+<!--                        --><?php //endwhile;
+//                        ?>
+<!---->
+<!--                        </thead>-->
+<!---->
+<!--                    </table>-->
+<!--                </form>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
 
 
 <body>

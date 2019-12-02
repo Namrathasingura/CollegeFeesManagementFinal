@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>LOGIN TO EDUUNIVERSITY</title>
+    <title>LOGIN TO COLLEGE FEES MANAGEMENT</title>
 
     <link href="css/bootstrap.css" rel="stylesheet" />
     <link href="css/font-awesome.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
                             <div class="mu-header-top-left">
                                 <div class="mu-top-email">
                                     <i class="fa fa-envelope"></i>
-                                    <span>eduuniversity@gmail.com</span>
+                                    <span>sdit@gmail.com</span>
                                 </div>
                                 <div class="mu-top-phone">
                                     <i class="fa fa-phone"></i>
@@ -65,13 +65,7 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                             <div class="mu-header-top-right">
-<!--                                <i class="fa fa-user">-->
-<!--                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="fa fa-angle-down"></span></a>-->
-<!--                                    <ul class="dropdown-menu" style="margin-left: 405px;">-->
-<!--                                        <li><a href="userlogin.php">User Login</a></li>-->
-<!--                                        <li><a href="login.php">Admin Login</a></li>-->
-<!--                                    </ul>-->
-<!--                                </i>-->
+
                             </div>
                         </div>
                     </div>
@@ -96,7 +90,7 @@
                 <!-- LOGO -->
                 <!-- TEXT BASED LOGO -->
                 <img src="img/univer.jpg" style="width: 60px; height: 60px;/">
-                <a class="navbar-brand" href="index.html"><span style="font-style: oblique">EDU University</span></a>
+                <a class="navbar-brand" href="index.html"><span style="font-style: oblique">Shree Devi Institute Of Technology</span></a>
 
             </div>
             <div id="navbar" class="navbar-collapse collapse">
@@ -159,7 +153,13 @@ if(isset($_POST['login']))
     $str="select * from tbluser where username='$username' and password='$pass'";
     $res=mysqli_query($sql,$str);
     if(mysqli_num_rows($res)>0)
+    {
+        session_start();
+        $_SESSION["username"]=$username;
+        $_SESSION["password"]=$pass;
+
         echo "<script>alert('Login Successfull');window.location.href='usermain.php';</script>";
+    }
     else
         echo "<script>alert('Login unuccessfull');</script>";
 }

@@ -1,11 +1,8 @@
+
 <?php
 
-ob_start();
 session_start();
-unset($_SESSION['rainbow_name']);
-unset($_SESSION['rainbow_uid']);
-unset($_SESSION['rainbow_username']);
-echo '<script type="text/javascript">window.location="Varsity/index.html"; </script>';
-
+session_destroy();
+header("location:http://localhost/CollegeFeesManagement/Varsity/index.html");
 
 ?>

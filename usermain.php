@@ -24,7 +24,16 @@
 //include("php\userheader.php");
 include ("userindex.php");
 ?>
+<?php
+session_start();
+if(!isset($_SESSION['username']) || !isset($_SESSION['password']))
+{
+    header("location:http://localhost/CollegeFeesManagement/usermain.php");
 
+
+}
+
+?>
 </body>
 </html>
 <!-- /. NAV SIDE  -->

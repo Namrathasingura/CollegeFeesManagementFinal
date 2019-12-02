@@ -73,7 +73,8 @@ include("php/userheader.php");
                         <h1 style="color: darkblue; text-shadow: 6px 7px 2px darkgrey;font-family: 'Blackadder ITC'">Setting</h1>
                     </a>
 
-                    <strong style="color: ">You Can Find The Setting  CLICK HERE</strong>
+                    <strong style="color: ">You Can Find The Setting <br>
+                        CLICK HERE</strong>
                 </div>
             </div>
             <!--  Report row end  -->

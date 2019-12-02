@@ -3,7 +3,7 @@
 include 'connect.php';
 
 $sem=$_POST['sem'];
-lname=$_POST['lname'];
+$lname=$_POST['lname'];
 $email=$_POST['email'];
 $phone=$_POST['phone'];
 $branch=$_POST['branch'];
